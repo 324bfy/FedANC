@@ -11,25 +11,24 @@ The project is built upon the original ANC paper (Abadi & Andersen, ICLR 2017) a
 
 The following diagram shows the federated learning workflow:
 
-          ┌─────────────┐
-          │   Server    │
-          │  (FedAvg)   │
-          └──────┬──────┘
-                 │
-       ┌─────────┼─────────┐
-       │         │         │
-       ▼         ▼         ▼
-  ┌─────────┐┌─────────┐┌─────────┐
-  │Client 1 ││Client 2 ││Client 3 │
-  │ (P,K)   ││ (P,K)   ││ (P,K)   │
-  │ANC      ││ANC      ││ANC      │
-  └─────────┘└─────────┘└─────────┘
+        ┌─────────────┐
+        │   Server    │
+        │  (FedAvg)   │
+        └──────┬──────┘
+               │
+     ┌─────────┼─────────┐
+     │         │         │
+     ▼         ▼         ▼
+┌─────────┐┌─────────┐┌─────────┐
+│Client 1 ││Client 2 ││Client 3 │
+│ (P,K)   ││ (P,K)   ││ (P,K)   │
+│ANC      ││ANC      ││ANC      │
+└─────────┘└─────────┘└─────────┘
 
 - Clients generate random plaintext `P` and key `K` locally.
 - Each client performs local Alice‑Bob‑Eve adversarial training.
 - Clients upload only the model parameters (Alice & Bob) to the server.
 - The server aggregates parameters using FedAvg and distributes the updated global model.
-
 ## Key Features
 
 - **Privacy by design** – Clients never share plaintext or keys; only model parameters are exchanged.
