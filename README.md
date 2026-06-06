@@ -7,6 +7,28 @@
 FedANC is a privacy‑preserving communication framework that combines **Federated Learning** and **Adversarial Neural Cryptography**. Multiple clients collaboratively train a global encryption‑decryption model **without sharing their local plaintexts or secret keys**. Each client runs a local Alice‑Bob‑Eve adversarial training, and only model parameters (Alice & Bob) are uploaded to the central server for FedAvg aggregation. This ensures that raw data never leaves the local device.
 
 The project is built upon the original ANC paper (Abadi & Andersen, ICLR 2017) and extends it to a distributed, privacy‑friendly setting.
+## Architecture
+
+The following diagram shows the federated learning workflow:
+
+          ┌─────────────┐
+          │   Server    │
+          │  (FedAvg)   │
+          └──────┬──────┘
+                 │
+       ┌─────────┼─────────┐
+       │         │         │
+       ▼         ▼         ▼
+  ┌─────────┐┌─────────┐┌─────────┐
+  │Client 1 ││Client 2 ││Client 3 │
+  │ (P,K)   ││ (P,K)   ││ (P,K)   │
+  │ANC      ││ANC      ││ANC      │
+  └─────────┘└─────────┘└─────────┘
+
+- Clients generate random plaintext `P` and key `K` locally.
+- Each client performs local Alice‑Bob‑Eve adversarial training.
+- Clients upload only the model parameters (Alice & Bob) to the server.
+- The server aggregates parameters using FedAvg and distributes the updated global model.
 
 ## Key Features
 
