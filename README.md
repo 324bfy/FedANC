@@ -9,8 +9,7 @@ FedANC is a privacy‑preserving communication framework that combines **Federat
 The project is built upon the original ANC paper (Abadi & Andersen, ICLR 2017) and extends it to a distributed, privacy‑friendly setting.
 ## Architecture
 
-The following diagram shows the federated learning workflow (use code block for proper alignment):
-
+<pre>
         ┌─────────────┐
         │   Server    │
         │  (FedAvg)   │
@@ -24,6 +23,7 @@ The following diagram shows the federated learning workflow (use code block for 
 │ (P,K)   ││ (P,K)   ││ (P,K)   │
 │ANC      ││ANC      ││ANC      │
 └─────────┘└─────────┘└─────────┘
+</pre>
 
 - Clients generate random plaintext `P` and key `K` locally.
 - Each client performs local Alice‑Bob‑Eve adversarial training.
