@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+.venv/
+venv/
+ENV/
+
+# Trained models (optional, if you want to keep them, remove these lines)
+models/*.pth
+models/*.mdl
+
+# Training logs
+training/
+logs/
+
+# IDE
+.vscode/
+.idea/
+
+# Images (if you don't want to upload plots)
+*.png
+*.jpg
