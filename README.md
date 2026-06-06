@@ -18,10 +18,10 @@ The project is built upon the original ANC paper (Abadi & Andersen, ICLR 2017) a
 
 ## Results (on 16‑bit blocks)
 
-| Method          | Decoder MSE | Eve MSE  | Privacy |
-|----------------|-------------|----------|---------|
-| Centralized     | 0.00263     | 0.945    | None    |
-| Federated (FedANC) | 0.06668  | 1.305    | Yes     |
+| Method               | Decoder MSE | Eve MSE | Privacy |
+|----------------------|-------------|---------|---------|
+| Centralized          | 0.00263     | 0.945   | None    |
+| Federated (FedANC)   | 0.06668     | 1.305   | Yes     |
 
 - Decoder MSE = reconstruction error (lower is better)
 - Eve MSE = adversary error (higher indicates better secrecy, 1.0 ≈ random guess)
@@ -34,47 +34,46 @@ The project is built upon the original ANC paper (Abadi & Andersen, ICLR 2017) a
 
 ## Installation
 
-```bash
-# Clone the repository
-git clone https://github.com/324bfy/FedANC.git
-cd FedANC
+Clone the repository and install dependencies:
 
-# (Optional) Create a virtual environment
-python -m venv .venv
-source .venv/bin/activate      # Linux/macOS
-.venv\Scripts\activate         # Windows
+    git clone https://github.com/324bfy/FedANC.git
+    cd FedANC
+    pip install torch numpy matplotlib tqdm
 
-# Install dependencies
-pip install torch numpy matplotlib tqdm
-<<<<<<< HEAD
-Usage
-All experiments are launched via run.py.
+(Optional) Create a virtual environment:
 
-Centralized Training (baseline)
-python run.py train
+    python -m venv .venv
+    source .venv/bin/activate       # Linux/macOS
+    .venv\Scripts\activate          # Windows
 
+## Usage
 
-Federated Learning
-python run.py fed
+All experiments are launched via `run.py`.
 
-Encryption / Decryption Demo
-python run.py encrypt
+- Centralized Training (baseline):  
+  `python run.py train`
 
-File Structure
-.
-├── run.py
-├── settings.py
-├── server.py
-├── core/
-│   ├── crypto_nets.py
-│   ├── data_feeder.py
-│   ├── local_worker.py
-│   ├── standalone.py
-│   ├── utils.py
-│   └── evaluator.py
-└── models/
+- Federated Learning:  
+  `python run.py fed`
+
+- Encryption / Decryption Demo:  
+  `python run.py encrypt`
+
+## File Structure
+
+    .
+    ├── run.py
+    ├── settings.py
+    ├── server.py
+    ├── core/
+    │   ├── crypto_nets.py
+    │   ├── data_feeder.py
+    │   ├── local_worker.py
+    │   ├── standalone.py
+    │   ├── utils.py
+    │   └── evaluator.py
+    └── models/
 
 ## Acknowledgements
+
 This project is based on the [CryptoGAN](https://github.com/zrthxn/CryptoGAN) implementation (MIT License) of the paper "Learning to Protect Communications with Adversarial Neural Cryptography" by Abadi & Andersen. We have refactored the codebase, added federated learning extensions, and changed naming conventions.
-=======
->>>>>>> e238ab8cb2a6d0ca5867eed40c3a79c0ba0fcb93
