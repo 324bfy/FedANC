@@ -46,6 +46,7 @@ source .venv/bin/activate      # Linux/macOS
 
 # Install dependencies
 pip install torch numpy matplotlib tqdm
+<<<<<<< HEAD
 Usage
 All experiments are launched via run.py.
 
@@ -75,3 +76,5 @@ File Structure
 
 ## Acknowledgements
 This project is based on the [CryptoGAN](https://github.com/zrthxn/CryptoGAN) implementation (MIT License) of the paper "Learning to Protect Communications with Adversarial Neural Cryptography" by Abadi & Andersen. We have refactored the codebase, added federated learning extensions, and changed naming conventions.
+=======
+>>>>>>> e238ab8cb2a6d0ca5867eed40c3a79c0ba0fcb93
